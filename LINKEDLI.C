@@ -19,7 +19,7 @@ printf("Enter the element:");
 scanf("%d",&num);
 ptr2=(struct node*)malloc(sizeof(struct node));
 ptr2->data=num;
-ptr2->add=ptr1;
+ptr2->add=ptr1->add;
 ptr1->add=ptr2;
 element++;
 }
@@ -79,9 +79,9 @@ ptr1=head->add;
 i=1;
 while(i<place){
 ptr2=ptr1->add;
-ptr1=ptr2;
+ptr1=ptr2->add;
+i++;
 }
-ptr2=ptr1->add;
 ptr2->add=ptr1->add;
 free(ptr1);
 element--;
@@ -107,7 +107,7 @@ head=(struct node*)malloc(sizeof(struct node));
 ptr1=(struct node*)malloc(sizeof(struct node));
 head->add=ptr1;
 while(choice!=8){
-printf("\n1)inInsert in start\n2)Insert in end\n3)Insert in middle\n4)Delete in start\n5)Delete in middle\n6)Delete in middle\n7)Display\n8)Exit\n");
+printf("\n1)Insert in start\n2)Insert in middle\n3)Insert in end\n4)Delete in start\n5)Delete in middle\n6)Delete in end\n7)Display\n8)Exit\n");
 printf("Enter a choice:");
 scanf("%d",&choice);
 switch(choice){
@@ -115,10 +115,10 @@ case 1:
 insertstart();
 break;
 case 2:
-insertend();
+insertmiddle();
 break;
 case 3:
-insertmiddle();
+insertend();
 break;
 case 4:
 deletestart();
