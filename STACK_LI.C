@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<conio.h>
 struct node{
     int data;
     struct node *add;
@@ -32,12 +31,6 @@ void display(){
      i++;
      num=ptr1->data;
      printf(" %d",num);
-     ptr2=ptr1->add;
-     ptr1=ptr2;
-}
-}
-}
-void pop(){
 if(count==0){
 printf("Stack is empty");
 }
