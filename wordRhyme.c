@@ -1,4 +1,8 @@
 
+/*Input: 4 size 
+    desk lusk peak head
+    match word:weak
+Output:peak */
 #include <stdio.h>
 #include<string.h>
 int main() {
